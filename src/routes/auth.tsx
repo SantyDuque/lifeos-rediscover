@@ -32,7 +32,7 @@ function AuthPage() {
   const [email, setEmail] = useState("santiago@lifeos.app");
   const [password, setPassword] = useState("");
 
-  const signedIn = session.data?.status === "signed-in";
+  const profile = session.data?.status === "signed-in" ? session.data.profile : undefined;
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-background px-4 py-16">
@@ -46,9 +46,9 @@ function AuthPage() {
           </p>
         </div>
 
-        {signedIn ? (
+        {profile ? (
           <div className="rounded-md border border-border p-4">
-            <p className="text-sm">You're already signed in as {session.data.profile.name}.</p>
+            <p className="text-sm">You're already signed in as {profile.name}.</p>
             <Button className="mt-4 w-full" onClick={() => navigate({ to: "/" })}>
               Go to Today
             </Button>

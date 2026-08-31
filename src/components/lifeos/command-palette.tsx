@@ -66,8 +66,6 @@ export function CommandPalette({
     <CommandDialog
       open={open}
       onOpenChange={onOpenChange}
-      title="Command palette"
-      description="Jump to a page, complete a habit, or close out a task."
     >
       <CommandInput placeholder="Search pages, habits and tasks…" />
       <CommandList>

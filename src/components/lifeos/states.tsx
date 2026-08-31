@@ -22,8 +22,8 @@ export function PanelHeader({
   action,
 }: {
   title: string;
-  hint?: string;
-  action?: ReactNode;
+  hint?: string | undefined;
+  action?: ReactNode | undefined;
 }) {
   return (
     <header className="mb-4 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
