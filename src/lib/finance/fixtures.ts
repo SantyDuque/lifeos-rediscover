@@ -212,7 +212,7 @@ function buildStandingOrders(now: Date): StandingOrder[] {
       frequency: "quarterly",
       nextDate: iso(addMonths(now, 1)),
       accountId: "a_checking",
-      categoryId: "c_obligation" in {} ? "c_housing" : "c_utilities",
+      categoryId: "c_utilities",
       paymentType: "bank-transfer",
     },
   ];
