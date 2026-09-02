@@ -3,6 +3,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import {
   CalendarDays,
+  Dumbbell,
   Flag,
   Gauge,
   ListTodo,
@@ -23,6 +24,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { to: "/", label: "Today", icon: ListTodo },
   { to: "/habits", label: "Habits", icon: Repeat },
+  { to: "/gym", label: "Gym", icon: Dumbbell },
   { to: "/dashboard", label: "Insights", icon: Gauge },
   { to: "/review", label: "Review", icon: NotebookPen },
   { to: "/goals", label: "Goals", icon: Flag },

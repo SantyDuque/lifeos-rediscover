@@ -10,6 +10,7 @@ import {
   ListTodo,
   Moon,
   NotebookPen,
+  Dumbbell,
   Repeat,
   Settings as SettingsIcon,
   Sun,
@@ -76,6 +77,9 @@ export function CommandPalette({
           </CommandItem>
           <CommandItem onSelect={() => run(() => navigate({ to: "/habits" }))}>
             <Repeat /> Habits
+          </CommandItem>
+          <CommandItem onSelect={() => run(() => navigate({ to: "/gym" }))}>
+            <Dumbbell /> Gym
           </CommandItem>
           <CommandItem onSelect={() => run(() => navigate({ to: "/dashboard" }))}>
             <Gauge /> Insights
