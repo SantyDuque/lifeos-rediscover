@@ -105,7 +105,7 @@ export function RecentPerformance({ trends }: { trends: MovementTrend[] }) {
         {trends.map((m) => (
           <li
             key={m.id}
-            className="grid grid-cols-[minmax(0,1fr)_4.5rem_auto] items-center gap-3 border-b border-border py-2.5 last:border-b-0"
+            className="grid grid-cols-[minmax(0,1fr)_5.5rem] items-center gap-3 border-b border-border py-2.5 last:border-b-0"
           >
             <div className="min-w-0">
               <p className="truncate text-sm text-foreground">{m.name}</p>
@@ -120,7 +120,6 @@ export function RecentPerformance({ trends }: { trends: MovementTrend[] }) {
             <div className="h-8">
               <Sparkline data={m.history} color="var(--muted-foreground)" />
             </div>
-            <span className="num text-sm text-foreground">{m.current}</span>
           </li>
         ))}
       </ul>
