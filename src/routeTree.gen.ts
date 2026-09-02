@@ -14,6 +14,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as GoalsRouteImport } from './routes/goals'
+import { Route as GymRouteImport } from './routes/gym'
 import { Route as ReviewRouteImport } from './routes/review'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as HabitsIndexRouteImport } from './routes/habits.index'
@@ -44,6 +45,11 @@ const GoalsRoute = GoalsRouteImport.update({
   path: '/goals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GymRoute = GymRouteImport.update({
+  id: '/gym',
+  path: '/gym',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewRoute = ReviewRouteImport.update({
   id: '/review',
   path: '/review',
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/calendar': typeof CalendarRoute
   '/dashboard': typeof DashboardRoute
   '/goals': typeof GoalsRoute
+  '/gym': typeof GymRoute
   '/review': typeof ReviewRoute
   '/settings': typeof SettingsRoute
   '/habits/$habitId': typeof HabitsHabitIdRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/calendar': typeof CalendarRoute
   '/dashboard': typeof DashboardRoute
   '/goals': typeof GoalsRoute
+  '/gym': typeof GymRoute
   '/review': typeof ReviewRoute
   '/settings': typeof SettingsRoute
   '/habits/$habitId': typeof HabitsHabitIdRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/calendar': typeof CalendarRoute
   '/dashboard': typeof DashboardRoute
   '/goals': typeof GoalsRoute
+  '/gym': typeof GymRoute
   '/review': typeof ReviewRoute
   '/settings': typeof SettingsRoute
   '/habits/$habitId': typeof HabitsHabitIdRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/dashboard'
     | '/goals'
+    | '/gym'
     | '/review'
     | '/settings'
     | '/habits/$habitId'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/dashboard'
     | '/goals'
+    | '/gym'
     | '/review'
     | '/settings'
     | '/habits/$habitId'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/dashboard'
     | '/goals'
+    | '/gym'
     | '/review'
     | '/settings'
     | '/habits/$habitId'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   CalendarRoute: typeof CalendarRoute
   DashboardRoute: typeof DashboardRoute
   GoalsRoute: typeof GoalsRoute
+  GymRoute: typeof GymRoute
   ReviewRoute: typeof ReviewRoute
   SettingsRoute: typeof SettingsRoute
   HabitsHabitIdRoute: typeof HabitsHabitIdRoute
@@ -184,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GoalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gym': {
+      id: '/gym'
+      path: '/gym'
+      fullPath: '/gym'
+      preLoaderRoute: typeof GymRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review': {
       id: '/review'
       path: '/review'
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarRoute: CalendarRoute,
   DashboardRoute: DashboardRoute,
   GoalsRoute: GoalsRoute,
+  GymRoute: GymRoute,
   ReviewRoute: ReviewRoute,
   SettingsRoute: SettingsRoute,
   HabitsHabitIdRoute: HabitsHabitIdRoute,
